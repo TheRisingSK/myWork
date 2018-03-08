@@ -1,23 +1,24 @@
-package com.prepared.mysql;
+package com.prepared.oracle;
 
 import java.sql.*;
 import com.dbconn.*;
 
 public class PrepareSelect {
 
-	public static Connection con = MySQLConn.getConnection();
 	public static void main(String[] args) {
-
+		
+		Connection con = OracleConn.getConnection();
+		
 		try {
 			
 			
-			PreparedStatement stmt = con.prepareStatement("SELECT * FROM STUDENT");
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM STUDENTS");
 			ResultSet rs = stmt.executeQuery();
 			
-			System.out.println("Rollno\tName\t\tContact");
-			System.out.println("--------------------------------");
+			System.out.println("FirstName\tLastName");
+			System.out.println("---------------------------");
 			while(rs.next()) {
-				System.out.println(rs.getInt(1)+"\t"+rs.getString(2)+"\t"+rs.getLong(3));
+				System.out.println(rs.getString(1)+"\t\t"+rs.getString(2));
 			}
 			
 			rs.close();
@@ -28,5 +29,6 @@ public class PrepareSelect {
 			System.out.println(e);
 		}
 	}
-
+	
+	
 }

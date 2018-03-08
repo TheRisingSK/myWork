@@ -1,4 +1,4 @@
-package com.prepared.mysql;
+package com.prepared.oracle;
 
 import java.sql.*;
 import com.dbconn.*;
@@ -7,15 +7,14 @@ public class PrepareDelete {
 
 	public static void main(String[] args) {
 
-		Connection con = MySQLConn.getConnection();
+		Connection con = OracleConn.getConnection();
 		
 		try {
+			PreparedStatement stmt = con.prepareStatement("DELETE FROM STUDENTS WHERE FNAME=?");
+			stmt.setString(1, "santu");
 			
-			PreparedStatement stmt = con.prepareStatement("DELETE FROM STUDENT WHERE ROLLNO=?");
-			stmt.setInt(1, 9);
-		
 			int res = stmt.executeUpdate();
-			System.out.println(res+" Rows deleted.....");
+			System.out.println(res+" record deleted....");
 		}
 		catch(SQLException e) {
 			
