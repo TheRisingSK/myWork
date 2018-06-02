@@ -1,2 +1,2 @@
 # myWork
-This is a most frequent and used list of Java programs.
+I work on diffrent technologies here you will find all the work that I have done so far.
