@@ -16,19 +16,31 @@ public class XmlServlet extends HttpServlet {
 		
 			response.setContentType("text/html");
 			PrintWriter out = response.getWriter();			
-			out.println("Hello from GET :\n");			
+			out.println("Hello from GET :");			
 			String username = request.getParameter("userName");
 			String fullname = request.getParameter("fullName");
-			out.print("Username : " + username + " Fullname : " + fullname);
+			out.println("Username : " + username + " Fullname : " + fullname);
+			
+			String prof = request.getParameter("prof");
+			out.println("Professsion : "+prof);
+			
+			String country = request.getParameter("country");
+			out.println("Country : "+ country);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		
 			response.setContentType("text/html");
 			PrintWriter out = response.getWriter();			
-			out.println("Hello from POST :\n");			
+			out.println("Hello from POST :");			
 			String username = request.getParameter("userName");
 			String fullname = request.getParameter("fullName");
-			out.print("Username : " + username + " Fullname : " + fullname);
+			out.println("Username : " + username + " Fullname : " + fullname);
+			
+			String prof = request.getParameter("prof");
+			out.println("Professsion : "+prof);
+			
+			String country = request.getParameter("country");
+			out.println("Country : "+ country);
 	}
 }

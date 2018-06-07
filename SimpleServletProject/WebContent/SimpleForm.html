@@ -5,9 +5,20 @@
 <title>Simple Form.</title>
 </head>
 <body>
-	<form action="XmlServlet" method="post">
+	<form action="XmlServlet" method="get">
 		Username : <input type="text" name="userName" />
 		Fullname:  <input type="text" name="fullName" />
+		Profession : 
+		<input type="radio" name="prof" value="Developer" />Developer
+		<input type="radio" name="prof" value="Tester" />Tester
+		Country: 
+		<select name="country">
+			<option>-select-</option>
+			<option value="India">India</option>
+			<option value="USA">USA</option>
+			<option value="Germany">Germany</option>
+			<option value="UK">UK</option>
+		</select>
 		<input type="submit" />	
 	</form>
 </body>
