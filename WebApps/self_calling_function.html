@@ -1,0 +1,21 @@
+<html>
+<head>
+        <title> Self calling function!!!</title>
+</head>
+<body>
+<h1>Self calling function!!</h1>
+<p id='d1'></p>
+<script type="text/javascript">
+    
+    (function(){        
+        var n = prompt('Enter a number:-');
+        var i = 1;
+        while(i<=10){
+           console.log(i*n);     
+           i++;      
+        }
+    })();
+
+</script>
+</body>
+</html>

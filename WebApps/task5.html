@@ -1,0 +1,30 @@
+<html>
+<head>
+           <title> </title>
+</head>
+<body>
+
+  <script type="text/javascript">
+    let userName = prompt('Enter your name:');
+
+    if(userName=='Admin'){
+        let pass = prompt("What's your password!!!");
+        if(pass=='TheMaster'){
+            alert('Welcome!');
+        }
+        else if(pass=='' || pass==null){
+            alert('Canceled');
+        }
+        else{
+            alert('Wrong password dummy!');
+        }
+    }
+    else if(userName=='' || userName==null){
+        alert('Cancelled!!');
+    }
+    else{
+        alert('I don\'t know you');
+    }
+  </script>
+</body>
+</html>

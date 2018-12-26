@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Angular Application!!!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/angular.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <h2>Currency Filter!!</h2>        
+    <hr>
+    <p>I buy vegitables around {{price | currency:"&#8377;"}}.</p>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", ["$scope", function ($scope) {
+        $scope.price = 234.11;
+    }]);
+</script>
+</body>
+</html>

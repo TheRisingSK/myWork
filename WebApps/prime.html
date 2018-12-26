@@ -1,0 +1,31 @@
+<html>
+<head>
+        <title>Display prime numbers.</title>
+</head>
+<body>
+<h1>Display prime numbers.</h1>
+<p id="demo"></p>
+<script type="text/javascript">
+// to display prime number
+function showPrime(n){
+    
+    for(let i = 2; i < n; i++){
+        if(!isPrime(i)) continue;
+        else console.log(i);        
+    }
+}
+
+// to calculate prime number
+function isPrime(n){
+
+    for(let i = 2; i < n; i++){
+        if(n % i == 0) return false;
+    }
+    return true;            
+}
+
+
+document.getElementById('demo').innerHTML = showPrime(50);
+</script>
+</body>
+</html>

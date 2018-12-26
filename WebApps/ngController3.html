@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular Controller!!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/angular.js"></script>
+</head>
+<body ng-app="myApplication" ng-controller="myController">
+First Name : <input type="text" ng-model="firstName"> <br> <br>
+Last Name : <input type="text" ng-model="lastName"> <br> <br>
+FullName : {{fullName()}}
+<script>
+    var app = angular.module('myApplication', []) ;
+    app.controller("myController", ["$scope", function($scope){
+        $scope.firstName = "Sunil";
+        $scope.lastName = "Kshirsagar";
+        $scope.fullName = function () {
+            return $scope.firstName+' '+$scope.lastName;
+        }
+    }]);
+</script>
+</body>
+</html>

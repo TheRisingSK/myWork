@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Scopes in AngularJS.</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <style>*{font-family: 'Dosis', sans-serif;}</style>
+    <script src="js/angular.js"></script>
+    </head>
+<body>
+
+    <div ng-app='myModule'>
+
+        Msg1: {{msg1}} <br>
+        Msg2: {{msg2}}
+
+            <div ng-controller='myCtrl1'> 
+            <h2>Employee Info:-</h2>
+            Name: {{employee.name}} <br>
+            Department: {{employee.dept}} <br>
+            Salary: {{employee.salary}} <br>
+            Msg1: {{msg1}} <br>
+            Msg2: {{msg2}}
+            </div>
+            <hr>
+            <div ng-controller='myCtrl2'> 
+            <h2>Student Info:-</h2>
+            Name : {{student.name}} <br>
+            Age: {{student.age}} <br>
+            Class: {{student.class}} <br>
+
+            Msg1: {{msg1}} <br>
+            Msg2: {{msg2}}
+            </div>
+    </div>
+
+    <script type="text/javascript">
+
+        var app = angular.module('myModule', []);
+
+        app.controller('myCtrl1',[ "$rootScope", "$scope", function($rootScope, $scope){
+        //controller 1
+        $scope.employee = {name: 'Ajay Jadhav', dept: 'SNOW', salary: 25644};
+        $rootScope.msg1 = 'This is msg1';
+        }]);
+
+        app.controller('myCtrl2',["$rootScope", "$scope",  function($rootScope, $scope){
+        //controller 2
+        $scope.student = {name : 'Baba Patil', age:14, class: 6};
+        $rootScope.msg2 = 'This is msg2';
+        }]);
+
+    </script>
+</body>
+</html>

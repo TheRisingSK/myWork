@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Angular Application!!!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/angular.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+            <h2>orderBy filters!!</h2>
+            <hr>
+            <ul>
+                <li ng-repeat="x in names | orderBy :'name'">
+                    {{x.name+' is from '+x.city}}.
+                </li>
+            </ul>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myController", ["$scope", function ($scope) {
+            $scope.names = [
+                {"name":"Santosh Kshirsagar", "city":"Aurangabad"},
+                {"name":"Sunil Kshirsagar", "city":"Pune"},
+                {"name":"Akshay Punekar", "city":"Pune"},
+                {"name":"Rahul Patil", "city" : "Beed"}
+            ];
+    }]);
+</script>
+</body>
+</html>

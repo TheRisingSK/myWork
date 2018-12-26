@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>External Controller!!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/angular.js"></script>
+    <script src="js/externalCtrl.js"></script>
+</head>
+<body ng-app="myApplication" ng-controller="myController">
+    <h2>External controller script.</h2>
+    <hr>
+    <ul>
+        <li ng-repeat="x in members">
+            {{x.name+' is from '+x.city}}.
+        </li>
+    </ul>
+</body>
+</html>

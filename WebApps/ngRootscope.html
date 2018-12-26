@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular Scope!!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/angular.js"></script>
+</head>
+<body ng-app="myApplication">
+   
+    <!--in rootscope-->
+    <h2>Rootscrope's favorite color.</h2>
+    <p>{{color}}</p>
+    <hr>
+    
+    <div ng-controller="myCtrl">
+        <h2>The scope of controller's favorite color.</h2>
+        <p>{{color}}</p>
+    </div>
+    <hr>
+    <h2>Rootscope's favorite color is still.</h2>
+    <p>{{color}}</p>
+
+<script>
+    var app = angular.module('myApplication', []);
+
+    app.run(function($rootScope){
+        $rootScope.color = "Blue";
+    });
+
+    app.controller("myCtrl", ["$scope", function ($scope) {
+            $scope.color = "Red ";
+    }]);
+</script>
+</body>
+</html>

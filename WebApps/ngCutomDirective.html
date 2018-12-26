@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Angular Cutom Directive!!!</title>
+        <script src="js/angular.js"></script>
+    </head>
+<body ng-app="myApp" sk-test-dir>
+ 
+<script>
+    var app =  angular.module('myApp', []);
+    app.directive("skTestDir", function(){
+        return {
+            template : "I was made by SK!!!"
+        };
+    });
+</script>
+</body>
+</html>

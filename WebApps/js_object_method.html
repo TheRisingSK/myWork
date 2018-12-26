@@ -1,0 +1,25 @@
+<html>
+        <head>
+            <title>JS Object methods.</title>
+        </head>
+<body>
+
+    <h2>JS Object methods!!</h2>
+    <hr>
+    <p id="d1"></p>
+
+
+    <script>
+        var employee = {
+            fname : "Santosh",
+            lname : "Kshirsagar",
+            dept : "SNOW",
+            salary : 34344,
+            fullName : function(){
+                    return this.fname + ' '+this.lname;
+            }
+        }    
+        document.getElementById('d1').innerHTML = employee.fullName();
+    </script>
+</body>
+</html>

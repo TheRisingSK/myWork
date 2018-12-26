@@ -1,0 +1,23 @@
+<html>
+<head>
+        <title>Function check age. </title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    function checkAge(age){
+        if(age>18) return true;
+        else return confirm('Do you have permission from your parents?')
+    }
+
+    var age = prompt('Enter your age : ');
+    if(checkAge(age)){
+        alert('Access granted!!!');
+    }
+    else{
+        alert('Access denied!!');
+    }
+</script>
+</body>
+</html>

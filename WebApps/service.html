@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Angular module and controller!!!</title>
+        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+        <style>*{font-family: 'Dosis', sans-serif;}</style>
+        <script src="js/angular.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    
+    Enter First Number : <input type="text" ng-model="fno"> <br>
+    Enter Second Number : <input type="text" ng-model="sno"> <br>
+    <input type="button"  value="ADD" ng-click="addition()"> <br>
+    <input type="button" value="MUL" ng-click="mul()"> <br>
+
+    <script>
+            var app = angular.module( 'myApp', []);
+
+            app.service('myService', function(){
+                
+                this.add = function(a, b){
+                    var c = a + b;
+                    return c;
+                };
+
+                this.mul = function(x, y){
+                    var c = x * y;
+                    return c;
+                };
+            });
+
+            app.controller('myCtrl ', ["$scope", "myService", function ($scope, myService) {
+                    $scope.fno = "";
+                    $scope.sno = "";
+                    $scope.res = "";
+                    $scope.addition = function() {
+                        $scope.res = myService.add($scope.fno, $scope.sno);
+                    };
+                    $scope.mul = function(){
+                        $scope.res = myService.mul($scope.fno, $scope.sno);
+                    };
+            }]);
+    </script>
+</body>
+</html>

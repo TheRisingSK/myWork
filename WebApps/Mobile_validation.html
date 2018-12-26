@@ -1,0 +1,35 @@
+<html>
+<head>
+        <title>Contact Number Validation!!! </title>
+</head>
+<body>
+
+    <form name="form" method="post" onsubmit="return  validMobile()">
+        <tr>
+        <td> Mobile No:</td>
+        <td><input type="text" name="phone"></td>
+        </tr>
+        <tr>
+        <td></td>
+        <td><input type="submit" name="sub" value="Submit"></td>
+        </tr>
+    </form>
+
+
+<script type="text/javascript">
+
+function validMobile() {
+    //contact number 
+    var a = document.form.phone.value;
+    var mob = /^[1-9]{1}[0-9]{9}$/;
+    if (mob.test(a) == false) {
+        alert("Please enter valid mobile number.");
+        a.focus();
+        return false;
+    }
+    return true;
+}
+
+</script>
+</body>
+</html>
