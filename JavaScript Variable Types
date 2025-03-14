@@ -1,0 +1,14 @@
+
+var intVar = 1; //integer variable
+
+var fltVal = 12.5; //float variable
+
+var strVal = "Santosh Kshirsagar";  //string variable
+
+var bulVar = true;  //boolean value
+
+var objVar = {firstName: 'Santosh'}; //object Variable
+
+var arrVar = ['Manda', 'Sunil', 'Kalina', 'Santosh'];  //array variable
+
+var dtVar = new GlideDateTime();  //date variable
